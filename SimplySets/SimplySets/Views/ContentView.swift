@@ -13,6 +13,7 @@ struct ContentView: View {
     @StateObject var vm = DataViewModel()
     @State var isNewUser = true
     @State var showingPopUp = false
+    private let adaptiveColumns = [ GridItem(.adaptive(minimum: 170)) ]
     
     var body: some View {
         ZStack {
@@ -36,17 +37,23 @@ struct ContentView: View {
                         .opacity(0.5)
                         .padding(50)
                 } else {
-                    List {
-                        ForEach(vm.savedEntities) { exercise in
-                            Text(exercise.name ?? "no name")
+                    NavigationView {
+                        ScrollView {
+                            LazyVGrid(columns: adaptiveColumns, spacing: 20) {
+                                ForEach(vm.savedEntities) { exercise in
+                                    ZStack {
+                                        Rectangle()
+                                            .frame(width: 170, height: 170)
+                                    }
+                                }
+                            }
                         }
-                        .onDelete(perform: vm.deleteExercise)
                     }
-                }
-                
-                Spacer()
-                
-                Button(action: {
+                    
+                    
+                    Spacer()
+                    
+                    Button(action: {
                         showingPopUp = true
                     }, label: {
                         Text("Add Exercise")
@@ -56,19 +63,20 @@ struct ContentView: View {
                             .cornerRadius(10)
                             .padding()
                             .font(.system(size: 18))
-                })
+                    })
+                    
+                }
                 
-            }
-            
-            if showingPopUp == true {
-                PopUpView(vm: vm, isNewUser: $isNewUser, showingPopUp: $showingPopUp)
+                if showingPopUp == true {
+                    PopUpView(vm: vm, isNewUser: $isNewUser, showingPopUp: $showingPopUp)
+                }
             }
         }
     }
-}
     
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+    struct ContentView_Previews: PreviewProvider {
+        static var previews: some View {
+            ContentView()
+        }
     }
 }
