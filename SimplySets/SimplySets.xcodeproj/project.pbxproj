@@ -11,9 +11,10 @@
 		3144E8732A8EA8EC00F82A53 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3144E8722A8EA8EC00F82A53 /* ContentView.swift */; };
 		3144E8752A8EA8ED00F82A53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3144E8742A8EA8ED00F82A53 /* Assets.xcassets */; };
 		3144E8782A8EA8ED00F82A53 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3144E8772A8EA8ED00F82A53 /* Preview Assets.xcassets */; };
-		3144E87A2A8EA8ED00F82A53 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3144E8792A8EA8ED00F82A53 /* Persistence.swift */; };
+		3144E87A2A8EA8ED00F82A53 /* DataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3144E8792A8EA8ED00F82A53 /* DataViewModel.swift */; };
 		3144E87D2A8EA8ED00F82A53 /* SimplySets.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3144E87B2A8EA8ED00F82A53 /* SimplySets.xcdatamodeld */; };
 		3144E8862A91A5A700F82A53 /* ScreenDimensionsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3144E8852A91A5A700F82A53 /* ScreenDimensionsExtension.swift */; };
+		3144E88A2A9D3BC700F82A53 /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3144E8892A9D3BC700F82A53 /* PopUpView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,9 +23,10 @@
 		3144E8722A8EA8EC00F82A53 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3144E8742A8EA8ED00F82A53 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3144E8772A8EA8ED00F82A53 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		3144E8792A8EA8ED00F82A53 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		3144E8792A8EA8ED00F82A53 /* DataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewModel.swift; sourceTree = "<group>"; };
 		3144E87C2A8EA8ED00F82A53 /* SimplySets.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SimplySets.xcdatamodel; sourceTree = "<group>"; };
 		3144E8852A91A5A700F82A53 /* ScreenDimensionsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenDimensionsExtension.swift; sourceTree = "<group>"; };
+		3144E8892A9D3BC700F82A53 /* PopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +63,7 @@
 				3144E8882A91A67F00F82A53 /* Extensions */,
 				3144E8872A91A66200F82A53 /* Views */,
 				3144E8742A8EA8ED00F82A53 /* Assets.xcassets */,
-				3144E8792A8EA8ED00F82A53 /* Persistence.swift */,
+				3144E88D2A9D725800F82A53 /* ViewModels */,
 				3144E87B2A8EA8ED00F82A53 /* SimplySets.xcdatamodeld */,
 				3144E8762A8EA8ED00F82A53 /* Preview Content */,
 			);
@@ -80,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				3144E8722A8EA8EC00F82A53 /* ContentView.swift */,
+				3144E8892A9D3BC700F82A53 /* PopUpView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -90,6 +93,14 @@
 				3144E8852A91A5A700F82A53 /* ScreenDimensionsExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3144E88D2A9D725800F82A53 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				3144E8792A8EA8ED00F82A53 /* DataViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,7 +175,8 @@
 			files = (
 				3144E87D2A8EA8ED00F82A53 /* SimplySets.xcdatamodeld in Sources */,
 				3144E8862A91A5A700F82A53 /* ScreenDimensionsExtension.swift in Sources */,
-				3144E87A2A8EA8ED00F82A53 /* Persistence.swift in Sources */,
+				3144E87A2A8EA8ED00F82A53 /* DataViewModel.swift in Sources */,
+				3144E88A2A9D3BC700F82A53 /* PopUpView.swift in Sources */,
 				3144E8732A8EA8EC00F82A53 /* ContentView.swift in Sources */,
 				3144E8712A8EA8EC00F82A53 /* SimplySetsApp.swift in Sources */,
 			);

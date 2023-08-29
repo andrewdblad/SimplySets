@@ -10,7 +10,9 @@ import CoreData
 
 struct ContentView: View {
     
+    @StateObject var vm = DataViewModel()
     @State var isNewUser = true
+    @State var showingPopUp = false
     
     var body: some View {
         ZStack {
@@ -28,25 +30,38 @@ struct ContentView: View {
                 
                 Spacer()
                 
-                Text("Click the \"Add Exercise\" button to ceate your first set.")
-                    .multilineTextAlignment(.center)
-                    .opacity(0.5)
-                    .padding(50)
+                if vm.savedEntities == [] {
+                    Text("Click the \"Add Exercise\" button to ceate your first set.")
+                        .multilineTextAlignment(.center)
+                        .opacity(0.5)
+                        .padding(50)
+                } else {
+                    List {
+                        ForEach(vm.savedEntities) { exercise in
+                            Text(exercise.name ?? "no name")
+                        }
+                        .onDelete(perform: vm.deleteExercise)
+                    }
+                }
                 
                 Spacer()
                 
                 Button(action: {
-                        print("tapped!")
+                        showingPopUp = true
                     }, label: {
                         Text("Add Exercise")
                             .foregroundColor(.white)
                             .frame(width: 150, height: 40)
                             .background(Color.blue)
-                            .cornerRadius(15)
+                            .cornerRadius(10)
                             .padding()
                             .font(.system(size: 18))
                 })
                 
+            }
+            
+            if showingPopUp == true {
+                PopUpView(vm: vm, isNewUser: $isNewUser, showingPopUp: $showingPopUp)
             }
         }
     }

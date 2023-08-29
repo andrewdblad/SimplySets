@@ -9,12 +9,12 @@ import SwiftUI
 
 @main
 struct SimplySetsApp: App {
-    //let persistenceController = PersistenceController.shared
+    @StateObject private var dataViewModel = DataViewModel()
 
     var body: some Scene {
         WindowGroup {
             ContentView()
-                //.environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .environment(\.managedObjectContext, dataViewModel.container.viewContext)
         }
     }
 }
