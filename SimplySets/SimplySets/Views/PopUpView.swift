@@ -13,6 +13,7 @@ struct PopUpView: View {
     @Binding var isNewUser: Bool
     @Binding var showingPopUp: Bool
     @State var name = ""
+    @FocusState private var keyboardFocused: Bool
     
     var body: some View {
         ZStack{
@@ -22,16 +23,6 @@ struct PopUpView: View {
                 Button(action: {
                     showingPopUp = false
                 }, label: {
-                    HStack {
-                        Image(systemName: "arrow.backward")
-                            .padding(.trailing, -5)
-                            .bold()
-                        Text("Cancel")
-                            .font(.system(size: 18))
-                    }
-                    .padding(10)
-                    Spacer()
-                    
                         })
                 
                 Spacer()
@@ -40,12 +31,17 @@ struct PopUpView: View {
                     Image(systemName: "chevron.down")
                         .bold()
                 }
+                .padding(15)
                 TextField("Enter exercise name: ", text: $name)
                     .multilineTextAlignment(.leading)
                     .textFieldStyle(.roundedBorder)
-                    .padding()
+                    .padding(.leading, 70)
+                    .padding(.trailing, 70)
+                    .focused($keyboardFocused)
+                    .onAppear {
+                        keyboardFocused = true
+                    }
                 
-                Spacer()
                 
                 Button(action: {
                     showingPopUp = false
@@ -60,12 +56,16 @@ struct PopUpView: View {
                         .cornerRadius(10)
                         .font(.system(size: 18))
                 })
-                .padding(.bottom, 10)
+                .padding(.top, 15)
+                .padding(.bottom, 55)
             }
-            .frame(width: 300, height: 300)
-            .background(Color("MainBackgroundColor"))
-            .cornerRadius(15)
         }
+    }
+}
+
+struct PopUpViewPreview: PreviewProvider {
+    static var previews: some View {
+        ContentView()
     }
 }
 
