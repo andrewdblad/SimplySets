@@ -38,6 +38,15 @@ class DataViewModel: ObservableObject {
         saveData()
     }
     
+    func addSet(exercise: Exercise, weight: Double, reps: Int) {
+        let newSet = Set(context: container.viewContext)
+        newSet.weight = weight
+        newSet.reps = Int16(reps)
+        newSet.date = Date()
+        newSet.exercise = exercise
+        saveData()
+    }
+    
     func saveData() {
         do {
             try container.viewContext.save()
@@ -53,4 +62,6 @@ class DataViewModel: ObservableObject {
         container.viewContext.delete(entity)
         saveData()
     }
+    
+
 }

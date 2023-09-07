@@ -9,7 +9,11 @@ import SwiftUI
 
 struct ExerciseView: View {
     
-    var exercise: Exercise
+    @ObservedObject var vm: DataViewModel
+    @State var exercise: Exercise
+    @State var showingAddSet = false
+    @State var totalReps = 0
+    @State var totalWeight = 0.0
     
     var body: some View {
 
@@ -38,6 +42,7 @@ struct ExerciseView: View {
                 Spacer()
                 
                 Button(action: {
+                    showingAddSet.toggle()
                     
                 }, label: {
                     Text("Add Set")
@@ -48,7 +53,17 @@ struct ExerciseView: View {
                         .padding()
                         .font(.system(size: 18))
                 })
-
+                .sheet(isPresented: $showingAddSet) {
+                    ZStack {
+                        Color.red
+                            .ignoresSafeArea()
+                        VStack {
+                            AddSetView(vm: vm, totalReps: $totalReps, totalWeight: $totalWeight, exercise: exercise)
+                                .presentationDetents([.height(265)])
+                                .presentationCornerRadius(25)
+                        }
+                    }
+                }
             }
         }
     }

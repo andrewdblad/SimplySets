@@ -3,7 +3,7 @@
     {
       "color" : {
         "platform" : "ios",
-        "reference" : "systemGray3Color"
+        "reference" : "systemBackgroundColor"
       },
       "idiom" : "universal"
     },
@@ -15,13 +15,8 @@
         }
       ],
       "color" : {
-        "color-space" : "srgb",
-        "components" : {
-          "alpha" : "1.000",
-          "blue" : "0x2B",
-          "green" : "0x2B",
-          "red" : "0x2B"
-        }
+        "platform" : "ios",
+        "reference" : "systemGroupedBackgroundColor"
       },
       "idiom" : "universal"
     }

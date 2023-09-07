@@ -17,7 +17,7 @@ struct PopUpView: View {
     
     var body: some View {
         ZStack{
-            Color("BackgroundColor")
+            Color("AddSetColor")
                 .ignoresSafeArea()
             VStack {
                 Button(action: {
@@ -26,21 +26,22 @@ struct PopUpView: View {
                         })
                 
                 Spacer()
-                HStack {
-                    Text("Add Exercise")
-                    Image(systemName: "chevron.down")
+                VStack {
+                    Text("Add Exercise +")
                         .bold()
+                    TextField("Enter exercise name: ", text: $name)
+                        .multilineTextAlignment(.leading)
+                        .textFieldStyle(.roundedBorder)
+                        .padding(.leading, 70)
+                        .padding(.trailing, 70)
+                        .focused($keyboardFocused)
+                        .onAppear {
+                            keyboardFocused = true
+                        }
                 }
-                .padding(15)
-                TextField("Enter exercise name: ", text: $name)
-                    .multilineTextAlignment(.leading)
-                    .textFieldStyle(.roundedBorder)
-                    .padding(.leading, 70)
-                    .padding(.trailing, 70)
-                    .focused($keyboardFocused)
-                    .onAppear {
-                        keyboardFocused = true
-                    }
+                .padding(10)
+                .background(Color("AddExerciseColor"))
+                .cornerRadius(20)
                 
                 
                 Button(action: {
@@ -57,7 +58,7 @@ struct PopUpView: View {
                         .font(.system(size: 18))
                 })
                 .padding(.top, 15)
-                .padding(.bottom, 55)
+                .padding(.bottom, 65)
             }
         }
     }

@@ -46,7 +46,7 @@ struct ContentView: View {
                             }.onDelete(perform: vm.deleteExercise(indexSet:))
                         }
                         .navigationDestination(for: Exercise.self) { exercise in
-                            ExerciseView(exercise: exercise)
+                            ExerciseView(vm: vm, exercise: exercise)
                         }
                     }
                     
@@ -65,7 +65,8 @@ struct ContentView: View {
                     })
                     .sheet(isPresented: $showingPopUp) {
                         PopUpView(vm: vm, isNewUser: $isNewUser, showingPopUp: $showingPopUp)
-                            .presentationDetents([.height(225)])
+                            .presentationDetents([.height(200)])
+                            .presentationCornerRadius(20)
                     }
                 }
             }

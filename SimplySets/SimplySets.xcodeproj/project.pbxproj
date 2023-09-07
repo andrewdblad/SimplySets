@@ -15,6 +15,7 @@
 		3144E87D2A8EA8ED00F82A53 /* SimplySets.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3144E87B2A8EA8ED00F82A53 /* SimplySets.xcdatamodeld */; };
 		3144E88A2A9D3BC700F82A53 /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3144E8892A9D3BC700F82A53 /* PopUpView.swift */; };
 		3144E8972AA13C5700F82A53 /* ExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3144E8962AA13C5700F82A53 /* ExerciseView.swift */; };
+		3144E8B92AA6C08400F82A53 /* AddSetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3144E8B82AA6C08400F82A53 /* AddSetView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		3144E87C2A8EA8ED00F82A53 /* SimplySets.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SimplySets.xcdatamodel; sourceTree = "<group>"; };
 		3144E8892A9D3BC700F82A53 /* PopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
 		3144E8962AA13C5700F82A53 /* ExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseView.swift; sourceTree = "<group>"; };
+		3144E8B82AA6C08400F82A53 /* AddSetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSetView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 				3144E8722A8EA8EC00F82A53 /* ContentView.swift */,
 				3144E8702A8EA8EC00F82A53 /* SimplySetsApp.swift */,
 				3144E8962AA13C5700F82A53 /* ExerciseView.swift */,
+				3144E8B82AA6C08400F82A53 /* AddSetView.swift */,
 				3144E8892A9D3BC700F82A53 /* PopUpView.swift */,
 			);
 			path = Views;
@@ -167,6 +170,7 @@
 			files = (
 				3144E87D2A8EA8ED00F82A53 /* SimplySets.xcdatamodeld in Sources */,
 				3144E87A2A8EA8ED00F82A53 /* DataViewModel.swift in Sources */,
+				3144E8B92AA6C08400F82A53 /* AddSetView.swift in Sources */,
 				3144E88A2A9D3BC700F82A53 /* PopUpView.swift in Sources */,
 				3144E8732A8EA8EC00F82A53 /* ContentView.swift in Sources */,
 				3144E8972AA13C5700F82A53 /* ExerciseView.swift in Sources */,
